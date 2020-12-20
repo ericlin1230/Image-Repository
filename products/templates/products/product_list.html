@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block title%}
+my profile
+{% endblock title%}
+
+{% block content %}
+<div class="ui grid">
+    <div class="row">
+        <div class="seven wide column">
+            {% for obj in qs %}
+            {% if not forloop.counter|divisibleby:2 %}
+            {% csrf_token %}
+            <div class="ui fluid card gameblock">
+                <input type="hidden" name="game_id" value={{obj.id}}>
+                <div class="fifty">
+                    <div class="fifty-l">
+                        <div class="content imgtext">
+                            <h3>{{obj.name}} </h3>
+                            Description: {{obj.description}} <br>
+                            Tags: {{obj.tags}} <br>
+                            {% if obj.status == "listed" %}
+                            For sale: Yes <br>
+                            Price: {{obj.price}} <br>
+                            {% else %}
+                            For sale: No <br>
+                            {% endif %}
+                        </div>
+                        <div class="right floated gamebutton">
+                            {% if not obj.owner == profile %}
+                            {% if obj.status == "listed" %}
+                            <button class="ui button bwhite-lg" type="submit">Buy</button>
+                            {% endif %}
+                            {% else %}
+                            {% if obj.status == "owned" %}
+                            <button class="ui button bwhite-lg" type="submit">Sell</button>
+                            <a href="{% url 'products:product-update' obj.pk %}"><button
+                                    class="ui button bwhite-lg">Update</button></a>
+                            {% else %}
+                            <button class="ui button bwhite-lg" type="submit">Cancel listing</button>
+                            {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="fifty-r">
+                        <a href="{{obj.image.url}}" target="_blank">
+                            <div class="imgCard">
+                                <img src="{{obj.image.url}}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="seven wide column">
+            {% for obj in qs %}
+            {% if forloop.counter|divisibleby:2 %}
+            {% csrf_token %}
+            <div class="ui fluid card gameblock">
+                <input type="hidden" name="game_id" value={{obj.id}}>
+                <div class="fifty">
+                    <div class="fifty-l">
+                        <div class="content imgtext">
+                            <h3>{{obj.name}} </h3>
+                            Description: {{obj.description}} <br>
+                            Tags: {{obj.tags}} <br>
+                            {% if obj.status == "listed" %}
+                            For sale: Yes <br>
+                            Price: {{obj.price}} <br>
+                            {% else %}
+                            For sale: No <br>
+                            {% endif %}
+                        </div>
+                        <div class="right floated gamebutton">
+                            {% if not obj.owner == profile %}
+                            {% if obj.status == "listed" %}
+                            <button class="ui button bwhite-lg" type="submit">Buy</button>
+                            {% endif %}
+                            {% else %}
+                            {% if obj.status == "owned" %}
+                            <button class="ui button bwhite-lg" type="submit">Sell</button>
+                            <a href="{% url 'products:product-update' obj.pk %}"><button
+                                    class="ui button bwhite-lg">Update</button></a>
+                            {% else %}
+                            <button class="ui button bwhite-lg" type="submit">Cancel listing</button>
+                            {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="fifty-r">
+                        <a href="{{obj.image.url}}" target="_blank">
+                            <div class="imgCard">
+                                <img src="{{obj.image.url}}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,8 @@
+# created by virtualenv automatically
+
+Lib/
+products/__pycache__/
+products/migrations/
+profiles/__pycache__/
+profiles/migrations/
+Scripts/

@@ -1,0 +1,81 @@
+body{
+    background: white !important;
+}
+
+.nav{
+    border-radius: 0px !important;
+    padding: 0px 0 2px 0 !important;
+    background-color: #64EEAD !important;
+}
+
+.mb-7{
+    margin-bottom: 7px !important;
+}
+
+.mt-5{
+    margin-top: 5px !important;
+}
+
+.mymodal{
+    height: 300px;
+    top: 200px;
+    font-size: 20px;
+}
+
+#onRight{
+    float: left;
+    width: 70%;
+}
+
+#onLeft{
+    float: left;
+    width: 30%;
+}
+
+.sneaky{
+    width: 100%;
+}
+
+.cmtColor{
+    color:black;
+}
+
+.mb-5{
+    margin-bottom: 5px;
+}
+
+.bwhite-lg{
+    background-color: transparent !important;
+    color: #33A5FF !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.bwhite-sm{
+    background-color: transparent !important;
+    width: 90px;
+    padding-left: 10px !important;
+    padding-right: 5px !important;
+}
+
+.bwhite-sm2{
+    background-color: transparent !important;
+    color: #33A5FF !important;
+    width: 90px;
+    padding-left: 10px !important;
+    padding-right: 5px !important;
+}
+
+.comment-box{
+    display: none;
+}
+
+.gamebutton{
+    padding-left: 15px !important;
+    padding-bottom: 15px !important;
+    
+}
+
+.gameblock{
+    height: 250px !important;
+}
