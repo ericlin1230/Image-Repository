@@ -157,6 +157,6 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join("static_cdn", "static_root")
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join("static_cdn", "media_root")
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ALLOWED_HOSTS =['image-repository-shopify.herokuapp.com','127.0.0.1']
