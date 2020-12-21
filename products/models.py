@@ -4,8 +4,9 @@ from django.template.defaultfilters import slugify
 from django.core.validators import FileExtensionValidator
 from django.contrib.auth.models import User
 from profiles.models import Profile
-
+from django.contrib.auth.decorators import login_required
 # Create your models here.
+
 class Product(models.Model):
     image = models.ImageField(upload_to='products', validators=[FileExtensionValidator(['png', 'jpg', 'jpeg'])])
     name = models.CharField(default='product', max_length = 200)

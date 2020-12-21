@@ -8,3 +8,23 @@ class ProductModelForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = ('name', 'image', 'description', 'tags', 'price', 'status')
+
+class ProductUpdateForm(forms.ModelForm):
+    # content = forms.CharField(widget=forms.Textarea(attrs={'rows':5}))
+    tags = forms.CharField(widget=forms.Textarea(attrs={'rows':3}))
+    description = forms.CharField(widget=forms.Textarea(attrs={'rows':5}))
+    class Meta:
+        model = Product
+        fields = ('name', 'description', 'tags', 'price')
+
+class ProductSellForm(forms.ModelForm):
+    # content = forms.CharField(widget=forms.Textarea(attrs={'rows':5}))
+    class Meta:
+        model = Product
+        fields = ('price', 'status')
+
+class ProductBuyForm(forms.ModelForm):
+    # content = forms.CharField(widget=forms.Textarea(attrs={'rows':5}))
+    class Meta:
+        model = Product
+        fields = ()

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Sell Product
+{% endblock title %}
+
+{% block content %}
+
+    <div class= 'ui segment'>
+        <h3>Cancel product listing</h3>
+        <form action="" method="POST" class="ui form" enctype="multipart/form-data">
+            {% csrf_token %}
+            Cancel the listing of this product? <br>
+            <br>
+            {{form}}
+            <button type ='submit' class ="ui button primary mt-5">Confirm</button>
+        </form>
+        <a href="/products/" class="item">
+            <button class ="ui button primary mt-5">Cancel</button>
+        </a>
+    </div>
+{% endblock content %}

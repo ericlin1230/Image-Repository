@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 
+
 # the home page of the main website
 def home_view(request):
     user = request.user

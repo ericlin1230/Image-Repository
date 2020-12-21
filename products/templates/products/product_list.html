@@ -1,11 +1,29 @@
 {% extends 'base.html' %}
 
 {% block title%}
-my profile
+Products
 {% endblock title%}
 
 {% block content %}
+{% if query %}
+    <div class='searchr'>
+        Search result for <b>{{query}}</b>.
+    </div>
+{% endif %}
 <div class="ui grid">
+    <!-- <form method='GET' action="">
+        <input type="text" name="search" id = "search" placeholder="Search posts"/>
+        <input type="submit"  value="Search"/>
+        </form> -->
+
+    <form action="" method="GET">
+        <div class="ui action left icon input searchb">
+            <input class="prompt" type="search" name='q' placeholder="Search for an image...">
+            <i class="search icon"></i>
+            <button type='submit' class="ui button">Search</button>
+        </div>
+    </form>
+
     <div class="row">
         <div class="seven wide column">
             {% for obj in qs %}
@@ -29,15 +47,18 @@ my profile
                         <div class="right floated gamebutton">
                             {% if not obj.owner == profile %}
                             {% if obj.status == "listed" %}
-                            <button class="ui button bwhite-lg" type="submit">Buy</button>
+                            <a href="{% url 'products:product-buy' obj.pk %}"><button
+                                    class="ui button bwhite-lg">Buy</button></a>
                             {% endif %}
                             {% else %}
                             {% if obj.status == "owned" %}
-                            <button class="ui button bwhite-lg" type="submit">Sell</button>
+                            <a href="{% url 'products:product-sell' obj.pk %}"><button
+                                    class="ui button bwhite-lg">Sell</button></a>
                             <a href="{% url 'products:product-update' obj.pk %}"><button
                                     class="ui button bwhite-lg">Update</button></a>
                             {% else %}
-                            <button class="ui button bwhite-lg" type="submit">Cancel listing</button>
+                            <a href="{% url 'products:product-cancel' obj.pk %}"><button
+                                    class="ui button bwhite-lg">Cancel Listing</button></a>
                             {% endif %}
                             {% endif %}
                         </div>
@@ -77,15 +98,18 @@ my profile
                         <div class="right floated gamebutton">
                             {% if not obj.owner == profile %}
                             {% if obj.status == "listed" %}
-                            <button class="ui button bwhite-lg" type="submit">Buy</button>
+                            <a href="{% url 'products:product-buy' obj.pk %}"><button
+                                    class="ui button bwhite-lg">Buy</button></a>
                             {% endif %}
                             {% else %}
                             {% if obj.status == "owned" %}
-                            <button class="ui button bwhite-lg" type="submit">Sell</button>
+                            <a href="{% url 'products:product-sell' obj.pk %}"><button
+                                    class="ui button bwhite-lg">Sell</button></a>
                             <a href="{% url 'products:product-update' obj.pk %}"><button
                                     class="ui button bwhite-lg">Update</button></a>
                             {% else %}
-                            <button class="ui button bwhite-lg" type="submit">Cancel listing</button>
+                            <a href="{% url 'products:product-cancel' obj.pk %}"><button
+                                    class="ui button bwhite-lg">Cancel Listing</button></a>
                             {% endif %}
                             {% endif %}
                         </div>
