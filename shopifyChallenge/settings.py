@@ -75,12 +75,12 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 ]
 
-MIDDLEWARE_CLASSES = [
-    # Simplified static file serving.
-    # https://warehouse.python.org/project/whitenoise/
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-]
+# MIDDLEWARE_CLASSES = [
+#     # Simplified static file serving.
+#     # https://warehouse.python.org/project/whitenoise/
+#     'django.middleware.security.SecurityMiddleware',
+#     'whitenoise.middleware.WhiteNoiseMiddleware',
+# ]
 
 ROOT_URLCONF = 'shopifyChallenge.urls'
 
@@ -164,6 +164,6 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join("static_cdn", "static_root")
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join("static_cdn", "media_root")
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ALLOWED_HOSTS = ['image-repository-shopify.herokuapp.com', '127.0.0.1']
