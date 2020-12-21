@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
-LOGIN_REDIRECT_URL='/products'
+LOGIN_REDIRECT_URL = '/products'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
@@ -60,7 +60,7 @@ ACCOUNT_EMAIL_UNIQUE = True
 # ACCOUNT_EMAIL_VERIFICATION ='mandatory'
 
 if DEBUG:
-    EMAIL_BACKEND='django.core.mail.backends.dummy.EmailBackend'
+    EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
@@ -72,6 +72,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+]
+
+MIDDLEWARE_CLASSES = [
+    # Simplified static file serving.
+    # https://warehouse.python.org/project/whitenoise/
+    'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
@@ -157,6 +164,6 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join("static_cdn", "static_root")
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join("static_cdn", "media_root")
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-ALLOWED_HOSTS =['image-repository-shopify.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['image-repository-shopify.herokuapp.com', '127.0.0.1']
