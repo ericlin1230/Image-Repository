@@ -1,1 +1,1 @@
-web: gunicorn Image-Repository.wsgi --log-file - 
+web: gunicorn shopifyChallenge.wsgi --log-file - 
