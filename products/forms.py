@@ -21,7 +21,7 @@ class ProductSellForm(forms.ModelForm):
     # content = forms.CharField(widget=forms.Textarea(attrs={'rows':5}))
     class Meta:
         model = Product
-        fields = ('price', 'status')
+        fields = ('price', )
 
 class ProductBuyForm(forms.ModelForm):
     # content = forms.CharField(widget=forms.Textarea(attrs={'rows':5}))

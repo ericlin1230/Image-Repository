@@ -87,6 +87,7 @@ class ProductSellView(UpdateView):
             form.add_error(None, 'You are not the owner of the product')
             return super().form_invalid(form)
         else:
+            form.instance.status = "listed"
             return super().form_valid(form)  # if valid update the form
 
 
