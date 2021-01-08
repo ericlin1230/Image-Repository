@@ -40,7 +40,7 @@ my profile
     <div class="ui purple message">Profile Updated!</div>
 
     {% endif %}
-    <h3>my profile: {{request.user}}</h3>
+    <h3>{{request.user}}'s Profile</h3>
     <div class="ui grid">
         <div class='row'>
             <div class='six wide column'>
@@ -53,11 +53,11 @@ my profile
                 <table class="ui table ">
                     <tbody>
                         <tr>
-                            <td>username</td>
+                            <td>Username</td>
                             <td>{{profile.user}}</td>
                         </tr>
                         <tr>
-                            <td>first name</td>
+                            <td>First Name</td>
                             <td>{{profile.first_name}}</td>
                         </tr>
                         <tr>
@@ -71,6 +71,10 @@ my profile
                         <tr>
                             <td>Bio</td>
                             <td>{{profile.bio}}</td>
+                        </tr>
+                        <tr>
+                            <td>Credit</td>
+                            <td>{{profile.credit}}</td>
                         </tr>
                     </tbody>
                 </table>
