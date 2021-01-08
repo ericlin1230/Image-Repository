@@ -1,6 +1,8 @@
 # Image-Repository
 
-Shopify Developer Intern Challenge for Back End Internship during Summer 2021.
+Shopify Developer Intern Challenge for Back End Internship during Summer 2021. 
+
+The Image Repository allows user to upload and 
 
 For any inquiries please contact erichungyu.lin@mail.utoronto.ca
 
@@ -16,6 +18,7 @@ For any inquiries please contact erichungyu.lin@mail.utoronto.ca
 
 ### How to signup as a regular user
 * After starting the server, there will be a signup option that allows the user to either login or signup
+* Each user starts out with 10,000 credits
 ![Image of Signup](https://i.imgur.com/JVeFWer.png)
 ![Image of Login](https://i.imgur.com/gYc3o1R.png)
 
