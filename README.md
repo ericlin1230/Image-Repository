@@ -1,5 +1,9 @@
 # Image-Repository
 
+Shopify Developer Intern Challenge for Back End Internship during Summer 2021.
+
+For any inquiries please contact erichungyu.lin@mail.utoronto.ca
+
 ## Instructions
 
 ### How to create a super user
