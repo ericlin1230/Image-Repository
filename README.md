@@ -8,6 +8,8 @@ For any inquiries please contact erichungyu.lin@mail.utoronto.ca
 
 ## Instructions
 
+The version from GitHub contains pre-exisiting data for showcaasing, to use it personally from scratch please reset the database.
+
 ### How to create a super user
 * Change the directory to the folder containing manage.py
 * python manage.py createsuperuser
