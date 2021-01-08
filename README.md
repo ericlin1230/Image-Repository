@@ -2,7 +2,7 @@
 
 Shopify Developer Intern Challenge for Back End Internship during Summer 2021. 
 
-The Image Repository allows user to upload and 
+The Image Repository allows user to upload and showcase their images, they also have the choice to list it up for sale for other useres. Each user starts out with 10,000 credits and can use to trade images from other users. The user can also upload their personal images that can be traded or displayed. 
 
 For any inquiries please contact erichungyu.lin@mail.utoronto.ca
 
